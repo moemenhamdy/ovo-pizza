@@ -10,7 +10,7 @@ const services = [
 ];
 
 export default function BranchesSection() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
