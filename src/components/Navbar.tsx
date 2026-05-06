@@ -15,12 +15,35 @@ export default function Navbar() {
   const { locale, toggleLanguage, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handle PWA Install Prompt
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === "accepted") {
+      setDeferredPrompt(null);
+    }
+  };
 
   // Close mobile menu on resize
   useEffect(() => {
@@ -88,6 +111,17 @@ export default function Navbar() {
 
           {/* Controls */}
           <div className="flex items-center gap-2">
+            {/* Install App Button */}
+            {deferredPrompt && (
+              <button
+                onClick={handleInstallClick}
+                className="hidden sm:flex items-center gap-1 px-3 py-2 rounded-xl text-sm font-bold bg-brand-500 text-white hover:bg-brand-400 transition-colors shadow-lg shadow-brand-500/20"
+              >
+                <span className="material-icons-outlined text-[18px]">download</span>
+                <span>{locale === "ar" ? "تثبيت التطبيق" : "Install App"}</span>
+              </button>
+            )}
+
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
