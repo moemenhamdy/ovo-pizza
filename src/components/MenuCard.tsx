@@ -14,6 +14,7 @@ export default function MenuCard({ item, index }: MenuCardProps) {
   const description = locale === "ar" ? item.descriptionAr : item.descriptionEn;
 
   const sizes = [
+    { key: "regular" as const, label: "" },
     { key: "large" as const, label: t("menu.large") },
     { key: "xlarge" as const, label: t("menu.xlarge") },
     { key: "family" as const, label: t("menu.family") },
@@ -54,13 +55,15 @@ export default function MenuCard({ item, index }: MenuCardProps) {
         {availableSizes.map((size, i) => (
           <div
             key={size.key}
-            className={`flex-1 flex flex-col items-center py-3 bg-brand-900/20 ${
+            className={`flex-1 flex flex-col items-center justify-center py-3 bg-brand-900/20 ${
               i !== availableSizes.length - 1 ? "border-e border-border" : ""
             }`}
           >
-            <span className="text-[11px] font-medium text-text-muted uppercase tracking-wider">
-              {size.label}
-            </span>
+            {size.label && (
+              <span className="text-[11px] font-medium text-text-muted uppercase tracking-wider mb-0.5">
+                {size.label}
+              </span>
+            )}
             <span className="text-base font-bold text-brand-300">
               {item.prices[size.key]}
               <span className="text-[10px] font-normal text-text-muted ms-0.5">

@@ -5,6 +5,7 @@ export interface MenuItem {
   descriptionAr: string;
   descriptionEn: string;
   prices: {
+    regular?: number;
     large?: number;
     xlarge?: number;
     family?: number;
@@ -301,7 +302,7 @@ export const menuData: MenuCategory[] = [
         nameEn: "V-Cola",
         descriptionAr: "",
         descriptionEn: "Soft drink",
-        prices: { large: 30 },
+        prices: { regular: 30 },
       },
       {
         id: "fries",
@@ -309,7 +310,7 @@ export const menuData: MenuCategory[] = [
         nameEn: "Fries",
         descriptionAr: "",
         descriptionEn: "Crispy french fries",
-        prices: { large: 40 },
+        prices: { regular: 40 },
       },
       {
         id: "sauce-cup",
@@ -317,7 +318,7 @@ export const menuData: MenuCategory[] = [
         nameEn: "Sauce Cup",
         descriptionAr: "",
         descriptionEn: "Extra dipping sauce",
-        prices: { large: 20 },
+        prices: { regular: 20 },
       },
       {
         id: "cheese-fries",
@@ -325,11 +326,11 @@ export const menuData: MenuCategory[] = [
         nameEn: "Cheese Fries",
         descriptionAr: "",
         descriptionEn: "Fries topped with melted cheese",
-        prices: { large: 50 },
+        prices: { regular: 50 },
       },
       {
         id: "stuffed-crust",
-        nameAr: "ستاند كراست",
+        nameAr: "ستافد كراست",
         nameEn: "Stuffed Crust",
         descriptionAr: "إضافة حواف محشية جبنة",
         descriptionEn: "Add cheese-stuffed crust to any pizza",
