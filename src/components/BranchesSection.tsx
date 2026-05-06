@@ -79,9 +79,13 @@ export default function BranchesSection() {
               href="https://maps.app.goo.gl/yzDhkk1vVikuF2RN7"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-4 px-6 rounded-2xl bg-[#4285F4] text-white font-bold hover:bg-[#4285F4]/90 transition-all duration-300 shadow-lg shadow-[#4285F4]/20 group"
+              className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-white text-[#1a1a1a] font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg shadow-white/10 group"
             >
-              <span className="material-icons-outlined group-hover:scale-110 transition-transform">place</span>
+              <img 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn5uDUFPgf7p8SojaD68ZbRm5bGqrR94Ps-A&s" 
+                alt="Google Maps" 
+                className="w-6 h-6 object-contain group-hover:scale-110 transition-transform"
+              />
               <span>{locale === "ar" ? "عرض على خرائط جوجل" : "View on Google Maps"}</span>
               <span className="material-icons-outlined text-sm ms-auto opacity-70 group-hover:translate-x-1 group-hover:opacity-100 transition-all rtl:rotate-180">arrow_forward</span>
             </a>
