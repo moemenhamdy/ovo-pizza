@@ -95,7 +95,7 @@ export default function BranchesSection() {
                 href="https://maps.apple.com/place?place-id=IB30C65333221392F&address=Al+Shahid+Fetouh+Abou+Al+Einen+Street%2C+Kafr+El+Sheikh%2C+Egypt&coordinate=31.111226%2C30.945764&name=Ovo+Pizza&_provider=9902"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-3 py-4 px-4 sm:px-6 rounded-2xl bg-white text-[#1a1a1a] font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg shadow-white/10 group"
+                className="flex-1 flex items-center justify-center gap-3 py-4 px-4 sm:px-6 rounded-2xl bg-[#1c1c1e] text-white font-bold hover:bg-[#2c2c2e] transition-all duration-300 shadow-lg shadow-black/20 border border-white/5 group"
               >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/3/39/Apple_Maps_Logo_3D.png"
