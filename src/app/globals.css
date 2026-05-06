@@ -1,26 +1,356 @@
 @import "tailwindcss";
 
+/* ============================================
+   OVO PIZZA — Design System
+   ============================================ */
+
+/* --- Dark Only Theme --- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0D1A0B;
+  --foreground: #F0F0E8;
+  --surface: #162214;
+  --surface-hover: #1D2E1A;
+  --surface-glass: rgba(13, 26, 11, 0.82);
+  --surface-glass-border: rgba(107, 158, 101, 0.15);
+
+  /* Brand Greens */
+  --brand-900: #1A3E16;
+  --brand-800: #2D5A27;
+  --brand-700: #3A6F33;
+  --brand-600: #4A7C44;
+  --brand-500: #5B8E54;
+  --brand-400: #6B9E65;
+  --brand-300: #8CB886;
+  --brand-200: #B2D4AD;
+  --brand-100: #D9ECD6;
+  --brand-50: #EDF7EC;
+
+  /* Accent Golds */
+  --gold-500: #C49A2A;
+  --gold-400: #D4A843;
+  --gold-300: #E8C97A;
+  --gold-200: #F0DCA4;
+  --gold-100: #F5E6C8;
+
+  /* Text */
+  --text-primary: #F0F0E8;
+  --text-secondary: #B0B8A8;
+  --text-muted: #6B7B65;
+  --text-on-brand: #FFFFFF;
+
+  /* Borders */
+  --border: #2A3D26;
+  --border-hover: #3A5234;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+
+  /* Misc */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+  --navbar-height: 72px;
 }
 
+/* ============================================
+   Tailwind Theme Tokens
+   ============================================ */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+
+  --color-brand-900: var(--brand-900);
+  --color-brand-800: var(--brand-800);
+  --color-brand-700: var(--brand-700);
+  --color-brand-600: var(--brand-600);
+  --color-brand-500: var(--brand-500);
+  --color-brand-400: var(--brand-400);
+  --color-brand-300: var(--brand-300);
+  --color-brand-200: var(--brand-200);
+  --color-brand-100: var(--brand-100);
+  --color-brand-50: var(--brand-50);
+
+  --color-gold-500: var(--gold-500);
+  --color-gold-400: var(--gold-400);
+  --color-gold-300: var(--gold-300);
+  --color-gold-200: var(--gold-200);
+  --color-gold-100: var(--gold-100);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border: var(--border);
+
+  --font-sans: var(--font-inter), var(--font-cairo), system-ui, sans-serif;
+
+  /* Custom animations */
+  --animate-fade-up: fade-up 0.7s ease-out both;
+  --animate-fade-down: fade-down 0.7s ease-out both;
+  --animate-scale-in: scale-in 0.5s ease-out both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-bounce-slow: bounce-slow 2.5s ease-in-out infinite;
+  --animate-pulse-badge: pulse-badge 2s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================
+   Keyframe Animations
+   ============================================ */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes pulse-badge {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-600) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Arabic font override */
+[dir="rtl"] body {
+  font-family: var(--font-cairo), system-ui, sans-serif;
+}
+
+/* ============================================
+   Glass Utility
+   ============================================ */
+.glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  /* border: 1px solid var(--surface-glass-border); */
+}
+
+/* ============================================
+   Shimmer Button
+   ============================================ */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(110deg,
+      var(--brand-700) 0%,
+      var(--brand-600) 40%,
+      var(--gold-400) 50%,
+      var(--brand-600) 60%,
+      var(--brand-700) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+  color: white;
+}
+
+/* ============================================
+   Scroll-reveal: use with IntersectionObserver
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   RTL Adjustments
+   ============================================ */
+[dir="rtl"] .scroll-tabs {
+  direction: rtl;
+}
+
+/* ============================================
+   Custom Scrollbar for tabs
+   ============================================ */
+.scroll-tabs {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================
+   Section divider decoration
+   ============================================ */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand-400), transparent);
+}
+
+/* ============================================
+   Selection color
+   ============================================ */
+::selection {
+  background: var(--brand-400);
+  color: white;
+}
+
+/* ============================================
+   Instagram Embed Dark Mode Hack
+   ============================================ */
+.ig-embed-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #ffffff;
+  /* The embed is forced white by IG */
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+
+  /* Make compact */
+  max-height: 420px;
+  /* Add a subtle white fade at the bottom to mask the cut-off */
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Ensure the iframe scales properly */
+.ig-embed-card iframe {
+  margin: -2px !important;
+  /* Pull it slightly up to hide native border if any */
+  width: calc(100% + 4px) !important;
+}
+
+/* 
+  WARNING ABOUT DARK MODE: 
+  Instagram natively DOES NOT support dark mode for website embeds.
+  If you uncomment the filter below, it will force the white background to dark, 
+  BUT it will also invert the colors of the pizza photos (making them look like blue/alien food) 
+  because we cannot inject CSS inside Instagram's cross-origin iframe to fix the images.
+*/
+/* 
+.ig-embed-card iframe {
+  filter: invert(100%) hue-rotate(180deg) brightness(1.1) contrast(1.05) !important;
+} 
+*/
+
+.ig-embed-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, var(--brand-500), #e4405f, #833ab4);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 1.1rem;
+}
+
+.ig-embed-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(228, 64, 95, 0.25);
+}
+
+.ig-embed-card:hover::before {
+  opacity: 1;
 }

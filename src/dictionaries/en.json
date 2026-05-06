@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "branches": "Our Branch",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "IN CRUST WE TRUST",
+    "subtitle": "Handcrafted pizza made with passion, served with love. Experience the taste that keeps Kafr El-Sheikh craving more.",
+    "viewMenu": "View Menu",
+    "callUs": "Call Us",
+    "scrollDown": "Scroll Down"
+  },
+  "menu": {
+    "title": "Our Menu",
+    "subtitle": "Explore our handcrafted selection of premium pizzas and sides",
+    "large": "Large",
+    "xlarge": "XLarge",
+    "family": "Family",
+    "currency": "EGP",
+    "new": "NEW",
+    "categories": {
+      "classic": "Classic",
+      "meat": "Meat",
+      "chicken": "Chicken",
+      "seafood": "Sea Food",
+      "fourseason": "Four Season",
+      "appetizers": "Appetizers"
+    }
+  },
+  "branches": {
+    "title": "Our Branch",
+    "subtitle": "Visit us and enjoy the full OVO experience",
+    "kafrelsheikh": "Kafr El-Sheikh",
+    "address": "El-Hakim Loqman St., in front of the old Faculty of Specific Education, Kafr El-Sheikh",
+    "services": "Available Services",
+    "dineIn": "Dine-in",
+    "takeaway": "Takeaway",
+    "delivery": "Delivery",
+    "workingHours": "Working Hours",
+    "hours": "12:00 PM – 2:00 AM, Daily"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Order now or reach out to us on social media",
+    "hotline": "Order Hotline",
+    "whatsapp": "Chat on WhatsApp",
+    "followUs": "Follow Us",
+    "chatWithUs": "Chat With Us",
+    "socialSubtitle": "Stay updated with our latest offers and fresh bakes."
+  },
+  "footer": {
+    "slogan": "IN CRUST WE TRUST 🍕💚",
+    "rights": "© 2025 OVO Pizza. All rights reserved.",
+    "madeWith": "Made with 💚 in Kafr El-Sheikh"
+  },
+  "gallery": {
+    "title": "From Our Kitchen",
+    "subtitle": "Fresh out of the oven — see what we've been cooking",
+    "cta": "Follow us on Instagram",
+    "captions": {
+      "1": "Classic Pepperoni 🔥",
+      "2": "That cheese pull 🧀",
+      "3": "Fresh from the box 📦",
+      "4": "Straight into the oven 🔥",
+      "5": "Seafood Special 🦐",
+      "6": "Handmade with love 💚"
+    }
+  },
+  "stats": {
+    "pizzas": "Pizzas Served",
+    "customers": "Happy Customers",
+    "rating": "Average Rating",
+    "categories": "Menu Categories"
+  }
+}
