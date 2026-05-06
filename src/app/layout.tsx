@@ -16,7 +16,6 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://ovo-pizza-demo.vercel.app"),
   title: "OVO Pizza — IN CRUST WE TRUST 🍕💚",
   description:
     "أفضل بيتزا في كفر الشيخ. بيتزا مصنوعة يدوياً بشغف وتُقدم بحب. اطلب الآن! Handcrafted pizza made with passion in Kafr El-Sheikh. Explore our premium menu and order now!",
@@ -39,14 +38,6 @@ export const metadata: Metadata = {
       "بيتزا مصنوعة يدوياً بشغف وتُقدم بحب. اكتشف الطعم اللي خلى كفر الشيخ مش قادرة تستغنى عنه.",
     url: "/",
     siteName: "OVO Pizza",
-    images: [
-      {
-        url: "/banner.png",
-        width: 1200,
-        height: 630,
-        alt: "OVO Pizza Banner",
-      },
-    ],
     locale: "ar_EG",
     alternateLocale: "en_US",
     type: "website",
@@ -56,7 +47,6 @@ export const metadata: Metadata = {
     title: "OVO Pizza — IN CRUST WE TRUST 🍕💚",
     description:
       "أفضل بيتزا في كفر الشيخ. بيتزا مصنوعة يدوياً بشغف وتُقدم بحب. اطلب الآن!",
-    images: ["/banner.png"],
   },
   icons: {
     icon: "/ovo_logo.png",
