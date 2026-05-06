@@ -67,13 +67,24 @@ export default function BranchesSection() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-4 rounded-2xl bg-gold-500/10 border border-gold-500/20">
+            <div className="flex items-center gap-3 p-4 rounded-2xl bg-gold-500/10 border border-gold-500/20 mb-6">
               <span className="material-icons-outlined text-gold-500">schedule</span>
               <div>
                 <span className="text-xs font-semibold text-text-muted uppercase tracking-wider block">{t("branches.workingHours")}</span>
                 <span className="text-sm font-medium text-text-primary">{t("branches.hours")}</span>
               </div>
             </div>
+
+            <a
+              href="https://maps.app.goo.gl/yzDhkk1vVikuF2RN7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-4 px-6 rounded-2xl bg-[#4285F4] text-white font-bold hover:bg-[#4285F4]/90 transition-all duration-300 shadow-lg shadow-[#4285F4]/20 group"
+            >
+              <span className="material-icons-outlined group-hover:scale-110 transition-transform">place</span>
+              <span>{locale === "ar" ? "عرض على خرائط جوجل" : "View on Google Maps"}</span>
+              <span className="material-icons-outlined text-sm ms-auto opacity-70 group-hover:translate-x-1 group-hover:opacity-100 transition-all rtl:rotate-180">arrow_forward</span>
+            </a>
           </div>
         </div>
       </div>
