@@ -75,20 +75,37 @@ export default function BranchesSection() {
               </div>
             </div>
 
-            <a
-              href="https://maps.app.goo.gl/yzDhkk1vVikuF2RN7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-white text-[#1a1a1a] font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg shadow-white/10 group"
-            >
-              <img 
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn5uDUFPgf7p8SojaD68ZbRm5bGqrR94Ps-A&s" 
-                alt="Google Maps" 
-                className="w-6 h-6 object-contain group-hover:scale-110 transition-transform"
-              />
-              <span>{locale === "ar" ? "عرض على خرائط جوجل" : "View on Google Maps"}</span>
-              <span className="material-icons-outlined text-sm ms-auto opacity-70 group-hover:translate-x-1 group-hover:opacity-100 transition-all rtl:rotate-180">arrow_forward</span>
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://maps.app.goo.gl/yzDhkk1vVikuF2RN7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-3 py-4 px-4 sm:px-6 rounded-2xl bg-white text-[#1a1a1a] font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg shadow-white/10 group"
+              >
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/022/613/032/non_2x/google-maps-icon-logo-symbol-free-png.png"
+                  alt="Google Maps"
+                  className="w-6 h-6 object-contain group-hover:scale-110 transition-transform"
+                />
+                <span className="text-sm sm:text-base">{locale === "ar" ? "خرائط جوجل" : "Google Maps"}</span>
+                <span className="material-icons-outlined text-sm ms-auto opacity-70 group-hover:translate-x-1 group-hover:opacity-100 transition-all rtl:rotate-180 hidden sm:block">arrow_forward</span>
+              </a>
+
+              <a
+                href="https://maps.apple.com/place?place-id=IB30C65333221392F&address=Al+Shahid+Fetouh+Abou+Al+Einen+Street%2C+Kafr+El+Sheikh%2C+Egypt&coordinate=31.111226%2C30.945764&name=Ovo+Pizza&_provider=9902"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-3 py-4 px-4 sm:px-6 rounded-2xl bg-white text-[#1a1a1a] font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg shadow-white/10 group"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/39/Apple_Maps_Logo_3D.png"
+                  alt="Apple Maps"
+                  className="w-6 h-6 object-contain group-hover:scale-110 transition-transform"
+                />
+                <span className="text-sm sm:text-base">{locale === "ar" ? "خرائط أبل" : "Apple Maps"}</span>
+                <span className="material-icons-outlined text-sm ms-auto opacity-70 group-hover:translate-x-1 group-hover:opacity-100 transition-all rtl:rotate-180 hidden sm:block">arrow_forward</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
