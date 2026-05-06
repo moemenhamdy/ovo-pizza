@@ -72,15 +72,12 @@ export default function MenuSection() {
                   setActiveCategory(category.id);
                   scrollTabIntoView(category.id);
                 }}
-                className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer shrink-0 ${
+                className={`px-5 py-3 rounded-2xl text-sm font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer shrink-0 text-center ${
                   isActive
                     ? "bg-brand-600 text-white shadow-md shadow-brand-600/30"
                     : "bg-surface text-text-secondary border border-border hover:border-brand-400/50 hover:text-brand-500"
                 }`}
               >
-                <span className="material-icons-outlined text-[18px]">
-                  {category.icon}
-                </span>
                 {locale === "ar" ? category.nameAr : category.nameEn}
               </button>
             );

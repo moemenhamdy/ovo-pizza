@@ -40,7 +40,7 @@ export const menuData: MenuCategory[] = [
         id: "mixed-cheese",
         nameAr: "مشكل جبن",
         nameEn: "Mixed Cheese",
-        descriptionAr: "صلصه - جبنه جوده - جبنه موتزاريلا - جبنه كبري",
+        descriptionAr: "صلصه - جبنه جوده - جبنه موتزاريلا - جبنه كيري",
         descriptionEn: "Tomato sauce, gouda, mozzarella, cheddar cheese",
         prices: { large: 170, xlarge: 210, family: 275 },
       },
