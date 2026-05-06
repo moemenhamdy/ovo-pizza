@@ -15,7 +15,15 @@ const cairo = Cairo({
   display: "swap",
 });
 
+const getBaseUrl = () => {
+  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return "http://localhost:3000";
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(getBaseUrl()),
   title: "OVO Pizza — IN CRUST WE TRUST 🍕💚",
   description:
     "أفضل بيتزا في كفر الشيخ. بيتزا مصنوعة يدوياً بشغف وتُقدم بحب. اطلب الآن! Handcrafted pizza made with passion in Kafr El-Sheikh. Explore our premium menu and order now!",
@@ -38,6 +46,14 @@ export const metadata: Metadata = {
       "بيتزا مصنوعة يدوياً بشغف وتُقدم بحب. اكتشف الطعم اللي خلى كفر الشيخ مش قادرة تستغنى عنه.",
     url: "/",
     siteName: "OVO Pizza",
+    images: [
+      {
+        url: "https://raw.githubusercontent.com/moemenhamdy/ovo-pizza/main/public/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "OVO Pizza Banner",
+      },
+    ],
     locale: "ar_EG",
     alternateLocale: "en_US",
     type: "website",
@@ -47,6 +63,7 @@ export const metadata: Metadata = {
     title: "OVO Pizza — IN CRUST WE TRUST 🍕💚",
     description:
       "أفضل بيتزا في كفر الشيخ. بيتزا مصنوعة يدوياً بشغف وتُقدم بحب. اطلب الآن!",
+    images: ["https://raw.githubusercontent.com/moemenhamdy/ovo-pizza/main/public/banner.png"],
   },
   icons: {
     icon: "/ovo_logo.png",
