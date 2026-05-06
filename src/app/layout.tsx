@@ -16,9 +16,10 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://ovo-pizza-demo.vercel.app"),
   title: "OVO Pizza — IN CRUST WE TRUST 🍕💚",
   description:
-    "Handcrafted pizza made with passion in Kafr El-Sheikh. Explore our premium menu of Classic, Meat, Chicken, Sea Food, and Four Season pizzas. Order now!",
+    "أفضل بيتزا في كفر الشيخ. بيتزا مصنوعة يدوياً بشغف وتُقدم بحب. اطلب الآن! Handcrafted pizza made with passion in Kafr El-Sheikh. Explore our premium menu and order now!",
   keywords: [
     "OVO Pizza",
     "pizza",
@@ -27,13 +28,16 @@ export const metadata: Metadata = {
     "كفر الشيخ",
     "delivery",
     "restaurant",
+    "مطعم",
+    "توصيل"
   ],
   authors: [{ name: "OVO Pizza" }],
+  robots: "index, follow",
   openGraph: {
     title: "OVO Pizza — IN CRUST WE TRUST 🍕💚",
     description:
-      "Handcrafted pizza made with passion in Kafr El-Sheikh. Order your favorite pizza now!",
-    url: "https://ovo.pizza",
+      "بيتزا مصنوعة يدوياً بشغف وتُقدم بحب. اكتشف الطعم اللي خلى كفر الشيخ مش قادرة تستغنى عنه.",
+    url: "/",
     siteName: "OVO Pizza",
     images: [
       {
@@ -43,20 +47,25 @@ export const metadata: Metadata = {
         alt: "OVO Pizza Banner",
       },
     ],
-    locale: "en_US",
+    locale: "ar_EG",
+    alternateLocale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "OVO Pizza — IN CRUST WE TRUST 🍕💚",
     description:
-      "Handcrafted pizza made with passion in Kafr El-Sheikh.",
+      "أفضل بيتزا في كفر الشيخ. بيتزا مصنوعة يدوياً بشغف وتُقدم بحب. اطلب الآن!",
     images: ["/banner.png"],
   },
   icons: {
     icon: "/ovo_logo.png",
     apple: "/ovo_logo.png",
   },
+};
+
+export const viewport = {
+  themeColor: "#1A3E16",
 };
 
 export default function RootLayout({
@@ -66,8 +75,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      dir="ltr"
+      lang="ar"
+      dir="rtl"
       className={`${inter.variable} ${cairo.variable} dark`}
       suppressHydrationWarning
     >
